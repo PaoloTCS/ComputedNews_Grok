@@ -1,0 +1,11 @@
+Flask==2.3.3
+Flask-Cors==4.0.0
+gunicorn==21.2.0
+python-dotenv==1.0.0
+numpy==1.25.2
+PyPDF2==3.0.1
+python-dateutil==2.9.0.post0
+sentence-transformers==3.4.1
+requests==2.32.3
+# Placeholder for MCP SDK (replace with actual package when available)
+mcp-sdk==0.1.0
