@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDomains, setCurrentDomainId } from './store/domainSlice';
+import { fetchDomains, setCurrentDomainId, addDomain, deleteDomain } from './store/domainSlice';
 import { fetchXPosts } from './store/xpostSlice';
 import BreadcrumbNav from './components/BreadcrumbNav';
 import DomainForm from './components/DomainForm';

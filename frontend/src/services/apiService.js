@@ -3,7 +3,7 @@ import axios from 'axios';
 // Use an environment variable for the base URL in production
 const baseURL = process.env.REACT_APP_BACKEND_URL
   ? `${process.env.REACT_APP_BACKEND_URL}/api`
-  : '/api';
+  : 'http://localhost:5001/api';
 
 // Create an axios instance with timeout
 const api = axios.create({

@@ -45,7 +45,10 @@ def check_prerequisites():
     """Check if all prerequisites are met to run the application."""
     if not os.getenv('X_BEARER_TOKEN'):
         logger.warning("X_BEARER_TOKEN not found in environment variables. "
-                      "X post fetching will not work.")
+                      "Using mock X post data instead.")
+    
+    # Comment out MCP server check as we're using mock data
+    """
     # Check if MCP server is running
     mcp_port = os.getenv('MCP_SERVER_PORT', '8080')
     try:
@@ -54,6 +57,8 @@ def check_prerequisites():
             logger.warning("MCP server not running or not responding on port {mcp_port}.")
     except requests.ConnectionError:
         logger.warning(f"MCP server not running on port {mcp_port}. Start the MCP server to enable X post fetching.")
+    """
+    logger.info("Skipping MCP server check as we're using mock data.")
 
 if __name__ == '__main__':
     try:

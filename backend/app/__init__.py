@@ -17,13 +17,17 @@ def create_app(env):
                 template_folder='templates',
                 static_folder='static')
     # Allow requests from local development and the Netlify deployment
-    CORS(app, resources={r"/*": {"origins": [
-        "http://localhost:3000", 
-        "http://127.0.0.1:3000",
-        "https://genuine-fudge-049c1d.netlify.app",
-        "https://semantic-tiles3.netlify.app",
-        "https://magical-sunshine-fa66db.netlify.app"
-    ]}})
+    CORS(app, resources={r"/*": {
+        "origins": [
+            "http://localhost:3000", 
+            "http://127.0.0.1:3000",
+            "https://genuine-fudge-049c1d.netlify.app",
+            "https://semantic-tiles3.netlify.app",
+            "https://magical-sunshine-fa66db.netlify.app"
+        ],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"]
+    }})
     
     # Configuration
     app.config.update(
